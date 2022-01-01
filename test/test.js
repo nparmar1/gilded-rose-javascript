@@ -12,9 +12,9 @@ describe("Gilded Rose", function() {
 
     it('Regular items decrease by 2 for quality once the sell_in day is less than 0', () => {
         const item = [new Item('Testing item', 0, 20)];
-        const updatedItem = update_quality(item);
-        expect(updatedItem[0].sell_in).toEqual();
-        expect(updatedItem[0].quality).toEqual();
+        update_quality(item);
+        expect(item[0].sell_in).toEqual();
+        expect(item[0].quality).toEqual();
     });  
   
   });
