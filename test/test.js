@@ -20,8 +20,8 @@ describe("Gilded Rose", function() {
     it('The quality of an item is never below 0', () => {
         const item = [new Item('Testing item', 10, 0)];
         update_quality(item);
-        expect(item[0].sell_in).toEqual(9);
-        expect(item[0].quality).toEqual(0);
+        expect(item[0].sell_in).toEqual();
+        expect(item[0].quality).toEqual();
     });
   
   });
