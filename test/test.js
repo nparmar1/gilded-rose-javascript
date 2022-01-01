@@ -27,8 +27,8 @@ describe("Gilded Rose", function() {
     it('Aged Brie increases quality by 1 as sell_in decrease by 1', () => {
         const item = [new Item('Aged Brie', 2, 0)];
         update_quality(item);
-        expect(item[0].sell_in).toEqual();
-        expect(item[0].quality).toEqual();
+        expect(item[0].sell_in).toEqual(1);
+        expect(item[0].quality).toEqual(1);
     });
   
   });
