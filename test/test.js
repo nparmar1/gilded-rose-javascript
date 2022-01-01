@@ -6,8 +6,8 @@ describe("Gilded Rose", function() {
     it('Regular items decrease by 1 for sell_in and quality', () => {
         const item = [new Item('+5 Dexterity Vest', 10, 20)];
         update_quality(item);
-        expect(item[0].sell_in).toEqual();
-        expect(item[0].quality).toEqual();
+        expect(item[0].sell_in).toEqual(9);
+        expect(item[0].quality).toEqual(19);
       });
   
   });
