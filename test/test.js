@@ -37,5 +37,12 @@ describe("Gilded Rose", function() {
         expect(item[0].sell_in).toEqual(1);
         expect(item[0].quality).toEqual(50);
     });
+
+    it('Sulfuras sell_in and quality are never affected', () => {
+        const item = [new Item('Sulfuras, Hand of Ragnaros', 0, 80)];
+        const updatedItem = update_quality(item);
+        expect(updatedItem[0].sell_in).toEqual(0);
+        expect(updatedItem[0].quality).toEqual(80);
+    });
   
   });
