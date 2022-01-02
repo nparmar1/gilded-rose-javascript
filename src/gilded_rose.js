@@ -30,6 +30,8 @@ class Update_quality {
     else item.quality = item.quality;
   }
 
+  sulfuras(item){}
+
 
   
 }
@@ -40,6 +42,7 @@ const update_quality = (items) => {
 
     items.forEach(item => {
       if(item.name === 'Aged Brie') update.agedBrie(item);
+      else if(item.name === 'Sulfuras, Hand of Ragnaros') update.sulfuras(item);
       else update.regularItems(item);
     });
 }
