@@ -32,6 +32,17 @@ class Update_quality {
 
   sulfuras(item){}
 
+  backstagePasses(item){
+    item.sell_in--;
+
+    if (item.sell_in < 0) item.quality = 0;
+    else if (item.sell_in <= 5) item.quality += 3;
+    else if (item.sell_in <= 10) item.quality += 2;
+    else if (item.sell_in > 10) item.quality += 1;
+  
+    if (item.quality > 50) item.quality = 50;
+  }
+
 
   
 }
@@ -43,6 +54,7 @@ const update_quality = (items) => {
     items.forEach(item => {
       if(item.name === 'Aged Brie') update.agedBrie(item);
       else if(item.name === 'Sulfuras, Hand of Ragnaros') update.sulfuras(item);
+      else if(item.name === 'Backstage passes to a TAFKAL80ETC concert') update.backstagePasses(item);
       else update.regularItems(item);
     });
 }
