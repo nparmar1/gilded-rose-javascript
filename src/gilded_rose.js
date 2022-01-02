@@ -15,23 +15,36 @@ items.push(new Item('Conjured Mana Cake', 3, 6));
 
 class Update_quality {
 
-  regularItems(item) {
+  regularItems(item){
     item.sell_in--;
     item.quality--;
   
     if(item.sell_in < 0) item.quality--;
     if(item.quality < 0) item.quality = 0; 
   }
+
+  agedBrie(item){
+    item.sell_in--;
+
+    if (item.quality < 50) item.quality++;
+    else item.quality = item.quality;
+  }
+
+
   
 }
 
 const update = new Update_quality();
 
 const update_quality = (items) => {
+
     items.forEach(item => {
-      update.regularItems(item);
+      if(item.name === 'Aged Brie') update.agedBrie(item);
+      else update.regularItems(item);
     });
 }
+
+
 
 // function update_quality(items) {
 //   for (var i = 0; i < items.length; i++) {
