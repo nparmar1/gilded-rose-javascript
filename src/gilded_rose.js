@@ -48,6 +48,7 @@ class Update_quality {
     item.quality -= 2;
   
     if (item.sell_in < 0) item.quality -= 2;
+    if (item.quality < 0) item.quality = 0;
   }
 
   
