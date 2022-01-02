@@ -101,4 +101,11 @@ describe("Gilded Rose", function() {
         expect(item[0].quality).toEqual(13);
       })
 
+      it('Conjured Mana Cake quality decreases by 4 if the sell_in value is less than by 0', () => {
+        const item = [new Item('Conjured Mana Cake', 0, 15)];
+        update_quality(item);
+        expect(item[0].sell_in).toEqual();
+        expect(item[0].quality).toEqual();
+      })
+
   });
