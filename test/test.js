@@ -107,5 +107,6 @@ describe("Gilded Rose", function() {
         expect(item[0].sell_in).toEqual();
         expect(item[0].quality).toEqual();
       })
+      
 
   });
