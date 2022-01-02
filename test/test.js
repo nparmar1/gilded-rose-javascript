@@ -87,4 +87,11 @@ describe("Gilded Rose", function() {
         expect(item[0].quality).toEqual(0);
     });
 
+    it('Backstage passes quality is never over 50', () => {
+        const item = [new Item('Backstage passes to a TAFKAL80ETC concert', 8, 50)];
+        update_quality();
+        expect(item[0].sell_in).toEqual();
+        expect(item[0].quality).toEqual();
+      })
+
   });
