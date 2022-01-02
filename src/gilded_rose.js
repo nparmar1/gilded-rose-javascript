@@ -43,6 +43,12 @@ class Update_quality {
     if (item.quality > 50) item.quality = 50;
   }
 
+  conjuredManaCake(item){
+    item.sell_in--;
+    item.quality -= 2;
+  
+    if (item.sell_in < 0) item.quality -= 2;
+  }
 
   
 }
@@ -55,6 +61,7 @@ const update_quality = (items) => {
       if(item.name === 'Aged Brie') update.agedBrie(item);
       else if(item.name === 'Sulfuras, Hand of Ragnaros') update.sulfuras(item);
       else if(item.name === 'Backstage passes to a TAFKAL80ETC concert') update.backstagePasses(item);
+      else if(item.name === 'Conjured Mana Cake') update.conjuredManaCake(item);
       else update.regularItems(item);
     });
 }
